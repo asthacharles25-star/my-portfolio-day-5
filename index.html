@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Astha C</h1>
+
+    <button id="menuBtn">☰ Menu</button>
+    <button id="themeBtn">🌙 Dark Mode</button>
+
+    <nav id="menu">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#todo">To-Do</a>
+    <a href="#weather">Weather</a>
+    <a href="#contact">Contact</a>
+</nav>
+</header>
+
+<main>
+
+<section id="hero">
+    <h2 id="typewriter"></h2>
+    <p>Welcome to my personal portfolio website.</p>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        Hello! I am Astha. I am learning Web Development using
+        HTML, CSS and JavaScript. I enjoy building responsive
+        and interactive websites.
+    </p>
+</section>
+
+<section id="skills">
+
+    <h2>Skills</h2>
+
+    <p>HTML</p>
+    <div class="progress">
+        <div class="bar" id="htmlBar"></div>
+    </div>
+
+    <p>CSS</p>
+    <div class="progress">
+        <div class="bar" id="cssBar"></div>
+    </div>
+
+    <p>JavaScript</p>
+    <div class="progress">
+        <div class="bar" id="jsBar"></div>
+    </div>
+
+    <p>Tailwind CSS</p>
+    <div class="progress">
+        <div class="bar" id="tailwindBar"></div>
+    </div>
+
+    <p>React</p>
+    <div class="progress">
+        <div class="bar" id="reactBar"></div>
+    </div>
+
+    <p>Node.js</p>
+    <div class="progress">
+        <div class="bar" id="nodeBar"></div>
+    </div>
+
+</section>
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<button class="filter-btn" data-filter="all">All</button>
+<button class="filter-btn" data-filter="frontend">Frontend</button>
+<button class="filter-btn" data-filter="backend">Backend</button>
+<button class="filter-btn" data-filter="ai">AI</button>
+
+<article class="project frontend">
+<h3>Landing Page</h3>
+<p>Responsive website created using HTML and CSS.</p>
+
+<button class="view-project-btn"
+data-title="Landing Page"
+data-image="https://via.placeholder.com/500x250"
+data-desc="A responsive landing page built using HTML and CSS."
+data-tech="HTML,CSS"
+data-link="https://github.com">
+
+View Project
+</button>
+
+</article>
+
+<article class="project backend">
+
+<h3>Student Management System</h3>
+
+<p>Simple backend project for managing student records.</p>
+
+<button class="view-project-btn"
+data-title="Student Management System"
+data-image="https://via.placeholder.com/500x250"
+data-desc="Backend project for managing student information."
+data-tech="JavaScript,Node.js"
+data-link="https://github.com">
+
+View Project
+
+</button>
+
+</article>
+
+<article class="project ai">
+
+<h3>AI Chatbot</h3>
+
+<p>Basic chatbot project using JavaScript concepts.</p>
+
+<button class="view-project-btn"
+data-title="AI Chatbot"
+data-image="https://via.placeholder.com/500x250"
+data-desc="Simple chatbot using JavaScript."
+data-tech="HTML,CSS,JavaScript"
+data-link="https://github.com">
+
+View Project
+
+</button>
+
+</article>
+
+</section>
+
+<section id="todo">
+
+    <h2>My To-Do List</h2>
+
+    <input
+        type="text"
+        id="taskInput"
+        placeholder="Enter a task">
+
+    <button id="addTaskBtn">
+        Add Task
+    </button>
+
+    <ul id="taskList"></ul>
+
+    <p id="taskCount"></p>
+
+</section>
+<section id="weather">
+
+<h2>Live Weather</h2>
+
+<input
+type="text"
+id="cityInput"
+placeholder="Enter city name">
+
+<button id="getWeatherBtn">
+Get Weather
+</button>
+
+<div id="loadingSpinner">
+Loading...
+</div>
+
+<div id="weatherResult">
+
+<h3 id="cityName"></h3>
+
+<p id="temp"></p>
+
+<p id="description"></p>
+
+<p id="humidity"></p>
+
+</div>
+
+</section>
+<section id="contact">
+
+    <h2>Contact Me</h2>
+
+    <form id="contactForm">
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Your Name">
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Your Email">
+
+        <textarea
+            id="message"
+            placeholder="Your Message">
+        </textarea>
+
+        <button type="submit">
+            Send Message
+        </button>
+
+    </form>
+
+</section>
+
+</main>
+
+<button id="topBtn">↑</button>
+
+<footer>
+
+    <p>
+        Current Time:
+        <span id="clock"></span>
+    </p>
+
+    <p>
+        © 2026 Astha C Portfolio
+    </p>
+
+</footer>
+<div id="projectModal">
+
+<div class="modal-content">
+
+<button id="closeModal">
+×
+</button>
+
+<h2 id="modalTitle"></h2>
+
+<img
+id="modalImage"
+src=""
+alt="Project">
+
+<p id="modalDesc"></p>
+
+<div id="modalTech"></div>
+
+<a
+id="modalLink"
+target="_blank">
+
+View Live Project
+
+</a>
+
+</div>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
