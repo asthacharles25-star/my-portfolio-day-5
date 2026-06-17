@@ -787,3 +787,11 @@ messages.innerHTML +=
 
 }
 );
+document.getElementById("chatInput")
+.addEventListener("keypress", function(e){
+
+if(e.key === "Enter"){
+sendChatBtn.click();
+}
+
+});
