@@ -703,27 +703,87 @@ chatWindow.classList.add(
 );
 }
 );
+const GROQ_API_KEY =
+"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";
 const sendChatBtn =
 document.getElementById(
 "sendChatBtn"
 );
-sendChatBtn.addEventListener("click", () => {
+sendChatBtn.addEventListener(
+"click",
+async ()=>{
 
-    const input =
-    document.getElementById("chatInput");
+const input =
+document.getElementById(
+"chatInput"
+);
 
-    const messages =
-    document.getElementById("chatMessages");
+const messages =
+document.getElementById(
+"chatMessages"
+);
 
-    const message =
-    input.value.trim();
+const message =
+input.value.trim();
 
-    if(message === "") return;
+if(message==="") return;
 
-    messages.innerHTML += `
-        <p><b>You:</b> ${message}</p>
-    `;
+messages.innerHTML +=
+`<p><b>You:</b> ${message}</p>`;
 
-    input.value = "";
+input.value="";
 
-});
+messages.innerHTML +=
+`<p id="loading">AI is typing...</p>`;
+
+try{
+
+const response =
+await fetch(
+"https://api.groq.com/openai/v1/chat/completions",
+{
+method:"POST",
+
+headers:{
+"Authorization":
+`Bearer ${GROQ_API_KEY}`,
+"Content-Type":
+"application/json"
+},
+
+body:JSON.stringify({
+model:"llama3-8b-8192",
+messages:[
+{
+role:"user",
+content:message
+}
+]
+})
+}
+);
+
+const data =
+await response.json();
+
+document
+.getElementById("loading")
+.remove();
+
+messages.innerHTML +=
+`<p><b>AI:</b> ${data.choices[0].message.content}</p>`;
+
+}
+catch(error){
+
+document
+.getElementById("loading")
+.remove();
+
+messages.innerHTML +=
+`<p><b>AI:</b> Error connecting.</p>`;
+
+}
+
+}
+);
