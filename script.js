@@ -730,12 +730,14 @@ if(message==="") return;
 
 messages.innerHTML +=
 `<p><b>You:</b> ${message}</p>`;
-
+messages.scrollTop =
+messages.scrollHeight;
 input.value="";
 
 messages.innerHTML +=
 `<p id="loading">AI is typing...</p>`;
-
+messages.scrollTop =
+messages.scrollHeight;
 try{
 
 const response =
