@@ -797,3 +797,7 @@ sendChatBtn.click();
 }
 
 });
+document.getElementById(
+"copyright"
+).textContent =
+`© ${new Date().getFullYear()} Astha C`;
