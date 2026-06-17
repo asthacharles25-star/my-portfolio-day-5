@@ -703,3 +703,7 @@ chatWindow.classList.add(
 );
 }
 );
+const sendChatBtn =
+document.getElementById(
+"sendChatBtn"
+);
