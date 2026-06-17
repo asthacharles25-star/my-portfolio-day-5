@@ -707,3 +707,23 @@ const sendChatBtn =
 document.getElementById(
 "sendChatBtn"
 );
+sendChatBtn.addEventListener("click", () => {
+
+    const input =
+    document.getElementById("chatInput");
+
+    const messages =
+    document.getElementById("chatMessages");
+
+    const message =
+    input.value.trim();
+
+    if(message === "") return;
+
+    messages.innerHTML += `
+        <p><b>You:</b> ${message}</p>
+    `;
+
+    input.value = "";
+
+});
