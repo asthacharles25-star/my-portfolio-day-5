@@ -517,6 +517,7 @@ justify-content:space-between;
 flex:1;
 padding:15px;
 overflow-y:auto;
+background:#f8fafc;
 }
 
 #chatInputArea{
@@ -539,5 +540,16 @@ button:hover,
 .resume-btn:hover{
 
 transform:scale(1.03);
+
+}
+@media(max-width:600px){
+
+#chatWindow{
+
+width:90%;
+right:5%;
+bottom:80px;
+
+}
 
 }
